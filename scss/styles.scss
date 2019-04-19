@@ -1,0 +1,129 @@
+@import "_normalize.scss";
+
+@mixin td {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #333;
+	min-height: 100%;
+}
+
+main {
+	height: 100vh;
+	min-width: 470px;
+	display: flex;
+	background: linear-gradient(to top right, #ff512f, #dd2476);
+}
+
+.form {
+	max-width: 460px;
+	width: 60%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px 30px 60px;
+	margin: auto;
+	background-color: #fff;
+	justify-content: center;
+	&__title {
+		line-height: 2.5rem;
+		width: 100%;
+		text-align: left;
+		margin: 0;
+		font-size: 2.4rem;
+		@include td;
+		&::before {
+			display: inline-block;
+			content: "";
+			background-image: url("../img/sign up icon.png");
+			background-repeat: no-repeat;
+			background-position: bottom;
+			height: 30px;
+			width: 30px;
+		}
+	}
+	&__about {
+		font-size: 1.3rem;
+		padding: 0 1rem;
+		&--terms {
+			font-size: 1.2rem;
+		}
+	}
+	&__link {
+		color: #ea355a;
+		text-decoration: none;
+		outline: none;
+		&:hover,
+		&:focus,
+		&:active {
+			color: #ff512f;
+			text-decoration: underline;
+		}
+	}
+	&__input {
+		flex-basis: 100%;
+		margin: 1rem;
+		font-size: 1.4rem;
+		border-radius: .5rem;
+		outline: none;
+		border: none;
+		background-color: #f0f0f0;
+		padding: 1rem;
+		display: inline-block;
+		&--s{
+			width: 30%;
+			flex-basis: 45%;
+		}
+		&:focus::placeholder{
+			text-indent: 100%; 
+			transition: text-indent 0.5s ease;
+			}
+	}
+	&__button {
+		font-size: 1.8rem;
+		padding: 1.5rem;
+		font-weight: bold;
+		outline: none;
+		color: #fff;
+		border: none;
+		background-color: #ea355a;
+		display: inline-block;
+		flex-basis: 95%;
+		border-radius: .5rem;
+		transition: all .4s linear;
+		box-shadow: 0 3px 0 0 #bd1962;
+		margin: 1rem 0 1rem;
+		transition: all .4s linear;
+		@include td;
+		&:hover,
+		&:focus,
+		&:active {
+			color: #ea355a;
+			background-color: #f5f5f5;
+			box-shadow: 0 3px 0 0 #999;
+		}
+	}
+}
+
+@media screen and (max-width: 785px) { 
+	.form { 
+		width: 95%;
+		&__input--s {
+			flex-basis: 100%;
+		}
+	}
+}
