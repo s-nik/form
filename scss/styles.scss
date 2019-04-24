@@ -1,5 +1,8 @@
 @import "_normalize.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
 @mixin td {
 	overflow: hidden;
 	white-space: nowrap;
@@ -16,14 +19,16 @@ html {
 }
 
 body {
+	min-height: 100%;
+}
+
+// First Form Start
+
+.first__form {
 	font-family: 'Arial', sans-serif;
 	font-size: 1.8rem;
 	line-height: 1.6;
 	color: #333;
-	min-height: 100%;
-}
-
-main {
 	height: 100vh;
 	min-width: 470px;
 	display: flex;
@@ -127,3 +132,256 @@ main {
 		}
 	}
 }
+
+// First Form End
+
+// Second Form Start
+
+.second__form {
+	font-family: 'Lato', sans-serif;
+	font-size: 2rem;
+	line-height: 1.6;
+	height: 100vh;
+	min-width: 470px;
+	display: flex;
+	background: linear-gradient(to top, #bac5db, #bac5db 20%);
+}
+
+.form2 {
+	max-width: 670px;
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30px;
+	margin: auto; 
+	background-color: #353a45;
+	justify-content: center;
+	border-radius: 25px;
+	position: relative;
+	&::before {
+		position: absolute;
+		display: inline-block;
+		content: "";
+		background-image: url("../img/Icon.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		top: -45px;
+		left: calc(50%-95px);
+		height: 95px;
+		width: 95px;
+		}
+	&__title {
+		color: #538fff;
+		line-height: 4.8rem;
+		width: 100%;
+		text-align: center;
+		margin: 5rem 0 0;
+		font-size: 4.8rem;
+		@include td;
+	}
+	&__text {
+		font-size: 2.2rem;
+		padding: 0 1rem;
+		color: #ffffff;
+	}
+	&__link {
+		text-decoration: none;
+		outline: none;
+		border-radius: 50%;
+		border: 3px solid #4d5975;
+		display: inline-block;
+		background-image: url('../img/cross.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 35px;
+		height: 35px;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: red;
+			transition: all .4s linear;
+		}
+	}
+	&__input {
+		flex-basis: 60%;
+		margin: 1rem;
+		font-size: 2rem;
+		border-radius: 1rem;
+		outline: none;
+		border: none;
+		background-color: #f0f0f0;
+		padding: 1rem 1rem 1.5rem;
+		display: inline-block;
+		&:focus::placeholder{
+			text-indent: 100%; 
+			transition: text-indent 0.5s ease;
+			}
+	}
+	&__button {
+		font-size: 1.8rem;
+		padding: 1rem 1rem 1.5rem;
+		font-weight: bold;
+		outline: none;
+		color: #fff;
+		border: none;
+		background-color: #538fff;
+		display: inline-block;
+		flex-basis: 30%;
+		border-radius: 1rem;  
+		margin: 1rem 0 1rem;
+		transition: all .4s linear;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		@include td;
+		&:hover,
+		&:focus,
+		&:active {
+			color: #538fff;
+			border: none;
+			background-color: #fff;
+		}
+	}
+	&__about {
+		color: #787d87;
+	}
+}
+
+// Second Form End
+
+// Third Form Start
+
+.third__form {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.6;
+	height: 100vh;
+	min-width: 470px;
+	display: flex;
+	background-color: #e5eeee;
+}
+
+.form3 {
+	max-width: 400px;
+	width: 85%;
+	color: #fbf6e4;
+	margin: auto;
+	background-color: #6b45c1;
+	background-image: url("../img/Vector Smart Object.png");
+	background-position: center;
+	justify-content: center;
+	font-weight: bold;
+	box-shadow: 0px 70px 80px -20px #000;
+	&__container {
+		width: 65%;
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 50px 0;
+	}
+	&__header {
+		width: 100%;
+	}
+	&__link {
+		@include td;
+		font-size: 1.8rem;
+		display: inline-block;
+		text-decoration: none;
+		width: 25%;
+		text-align: left;
+		margin: 0 2rem 0 0;
+		opacity: .5;
+		color: #fbf6e4;
+		border-bottom: 2px solid transparent;
+		transition: all .4s linear;
+		&:hover,
+		&:focus,
+		&:active {
+			opacity: 1;
+			border-bottom: 2px solid #e66a64;
+		}
+		&--ft {
+			margin-right: 0;
+			flex-basis: 45%;
+			font-size: 1.3rem;
+			font-weight: 400;
+			border-bottom: 1px solid #fff;
+			&:hover,
+			&:focus,
+			&:active {
+			opacity: 1;
+			border-bottom: 1px solid #e66a64;
+			}
+		}
+	}
+	&__label {
+		font-size: 1.6rem;
+		padding-top: 2rem;
+		@include td;
+		&--ch{
+			font-size: 1.3rem;
+			line-height: 2rem;
+			vertical-align: middle;
+			&::before {
+				content: "\2714";
+			    color: transparent;
+			    display: inline-block;
+			    font-size: 1.3rem;
+			    line-height: 1.6rem;    
+			    margin: -2px 5px 0 0;
+			    height: 17px;
+			    width: 17px;
+			    text-align: center;
+			    vertical-align: middle;
+			    background-color: #23ae92;
+			    transition: color ease .3s;
+			}
+		}
+
+	}
+	&__input {
+		width: 100%;
+		outline: none;
+		border: 2px solid rgba(251, 246, 228, .5);
+		background-color: transparent;
+		padding: 1rem;
+		display: inline-block;
+		transition: all .4s linear;
+	}
+	&__check {
+		display: none;
+		&:checked+.form3__label--ch:before {
+			color: #fff;
+		}
+	}
+	&__button {
+		font-size: 1.8rem;
+		padding: 1rem;
+		font-weight: bold;
+		outline: none;
+		color: #fff;
+		border: none;
+		background-color: #23ae92;
+		display: inline-block;
+		flex-basis: 100%; 
+		margin: 3rem 0;
+		transition: all .4s linear;
+		@include td;
+		&:hover,
+		&:focus,
+		&:active {
+			color: #23ae92;
+			border: none;
+			background-color: #fff;
+		}
+	}
+	&__footer {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+// Third Form End
